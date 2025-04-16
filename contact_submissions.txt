@@ -1,0 +1,15 @@
+Timestamp: 2025-04-16 08:06:23 UTC
+Name: Test
+Company Email: test@mail.com
+Message:
+Test
+----------------------------------------
+
+Timestamp: 2025-04-16 08:21:47 UTC
+Name: test
+Company Email: test@mail.com
+Company Name: test
+Message:
+test
+----------------------------------------
+

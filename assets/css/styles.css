@@ -1,0 +1,689 @@
+/* styles.css - Clean and Optimized */
+
+/* Table of Contents:
+    1.  CSS Reset and Variables
+    2.  Base Styles
+    3.  Typography
+    4.  Layout Components (Container, Section)
+    5.  Buttons
+    6.  Header
+    7.  Navigation
+    8.  Footer
+    9.  Cards
+    10. ametis
+    11. Accessibility
+    12. Responsive
+*/
+
+/* 1. CSS Reset and Variables */
+:root {
+  --color-primary: #0099FF;
+  --color-primary-dark: #0077CC;
+  --color-secondary: #4D59E0;
+  --color-accent: #1CB893;
+  --color-text: #333333;
+  --color-text-secondary: #6c757d;
+  --color-bg: #E8EAED;
+  --color-white: #FFFFFF;
+  --color-border: rgba(0, 0, 0, 0.1);
+}
+
+/* Basic reset to normalize styles across browsers.  
+  Consider using a more comprehensive reset (like reset.css) for production.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%; /* Prevent overflow */
+  height: auto;
+}
+
+/* 3. Typography */
+.text-center {
+  text-align: center;
+}
+
+/* 4. Layout Components */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+/* 5. Buttons */
+
+/* Assuming your hero button has a class of "hero-btn" */
+
+
+/* Hero Button Styles */
+.btn-blue { /* Base styles - these were already present */
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-blue:hover { /* Base hover */
+  background-color: var(--color-primary-dark);
+}
+
+/* Enhancements for CTA appearance */
+.btn-blue.cta { /* Combining existing class with "cta" */
+  padding: 1.25rem 2.5rem;   /* Increased padding */
+  font-size: 1.15rem;       /* Slightly larger text */
+  font-weight: 700;          /* Bold text */
+  border-radius: 0.5rem;    /* Less rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.btn-blue.cta:hover { /* Enhanced hover */
+  transform: scale(1.05) translateY(-2px); /* Slight lift */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+/* You already have these, but ensure they're present (or in your HTML) */
+/*
+.inline-block { display: inline-block; }
+.mt-4 { margin-top: 1rem; }  //  Assuming 1rem = 16px
+.hover\:scale-105:hover { transform: scale(1.05); } //  Tailwind - keep if you use it
+.transition-transform { transition: transform 0.15s ease-out; } // Tailwind - keep if you use it
+*/
+
+/* Responsive adjustment (example) */
+@media (max-width: 600px) {
+  .btn-blue.cta {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+  }
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn-secondary:hover {
+  background-color: #179a7b;
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+/* 6. Header */
+.site-header {
+  background-color: var(--color-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header .logo img {
+  height: 40px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.site-header .logo:hover img {
+  transform: scale(1.05);
+}
+
+/* 7. Navigation */
+.main-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.main-nav a:hover {
+  color: var(--color-primary);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Navigation */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-nav {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  background-color: var(--color-white);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 0.25rem;
+}
+
+.mobile-nav-link:hover {
+  color: var(--color-primary);
+  background-color: rgba(0, 153, 255, 0.05);
+}
+
+/* 8. Footer */
+.site-footer {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  padding: 3rem 0 1.5rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-logo img {
+  height: 36px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover img {
+  transform: scale(1.05);
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem; /* Consistent spacing */
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-weight: 500; /* Added font-weight for consistency */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-primary);
+}
+
+.footer-addresses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-address { /* Singular form for consistency */
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.footer-address-title { /* More specific and descriptive */
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+/* 9. Cards */
+.bg-white {
+  background-color: var(--color-white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-white:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Removed Tailwind gradient classes.  
+  If you need gradients, define them using standard CSS:
+*/
+/*
+.bg-gradient-to-br {
+  background: linear-gradient(to bottom right, #your-start-color, #your-end-color); 
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(to right, #your-start-color, #your-end-color);
+}
+*/
+
+/* 10. ametis */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 0.8s forwards;
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideRight 0.8s forwards;
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideLeft 0.8s forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-rotate-y {
+  opacity: 0;
+  transform: rotateY(90deg);
+  animation: rotateY 1s forwards;
+}
+
+.animate-bounce-in {
+  opacity: 0;
+  transform: scale(0.3);
+  animation: bounceIn 0.8s forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Animation Delays */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideLeft {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes rotateY {
+  to { opacity: 1; transform: rotateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Rotating Subheadline */
+.rotating-subheadline {
+  position: relative;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.rotating-subheadline span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInOut 12s infinite;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.rotating-subheadline span:nth-child(2) { animation-delay: 3s; }
+.rotating-subheadline span:nth-child(3) { animation-delay: 6s; }
+.rotating-subheadline span:nth-child(4) { animation-delay: 9s; }
+
+@keyframes fadeInOut {
+  0%, 30%, 100% { opacity: 0; }
+  10%, 20% { opacity: 1; }
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: #179a7b;
+  transform: translateY(-3px);
+}
+
+/* Marquee Animation */
+.marquee-content {
+  animation: scroll 25s linear infinite;
+  transform: translateX(0);
+}
+
+.group:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 11. Accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.keyboard-navigation a:focus,
+.keyboard-navigation button:focus {
+  outline: 2px solid var(--color-primary);
+}
+
+/* 12. Responsive Adjustments */
+@media (max-width: 768px) {
+  .site-header .container {
+      flex-direction: column;
+      padding: 1rem;
+  }
+
+  .mobile-menu-button {
+      display: block;
+  }
+
+  .main-nav {
+      display: none;
+  }
+
+  .rotating-subheadline {
+      height: auto;
+  }
+
+  .rotating-subheadline span {
+      position: static;
+      display: block !important;
+      animation: none !important;
+      opacity: 1 !important;
+      margin-bottom: 0.5rem;
+  }
+
+  .section {
+      padding: 2rem 0;
+  }
+
+  .btn {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+  }
+
+  /* Footer adjustments
+
+  /* Add to your existing styles.css */
+
+/* ====================
+   ENHANCEMENTS SECTION
+   ==================== */
+
+/* 1. Hero Section Enhancements */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, 
+    rgba(0, 153, 255, 0.1) 0%, 
+    rgba(0, 153, 255, 0) 70%);
+  animation: pulse 15s infinite alternate;
+}
+
+/* 2. Card Hover Effects */
+.card-hover-effect {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* 3. Animated Underlines */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.4s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* 4. Floating Elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* 5. Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 6. Glow Effects */
+.glow-on-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 15px rgba(0, 153, 255, 0.5);
+}
+
+/* 7. Responsive Typography */
+@media (min-width: 768px) {
+  .responsive-heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+  }
+}
+
+/* 8. 3D Card Effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateY(10deg) rotateX(5deg);
+}
