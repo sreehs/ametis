@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Host       = 'smtp.office365.com';//'YOUR_SMTP_HOST';        // e.g., 'smtp.gmail.com' or 'smtp.sendgrid.net'
             $mail->SMTPAuth   = true;                    // Enable SMTP authentication
             $mail->Username   = 'hello@algometis.com';    // Your SMTP username (often your full email address)
-            $mail->Password   = 'alg0m#tis2025';    // Your SMTP password (or App Password for services like Gmail)
+            $mail->Password   = 'delete1213445';    // Your SMTP password (or App Password for services like Gmail)
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption (or PHPMailer::ENCRYPTION_SMTPS for SSL)
             $mail->Port       = 587;                     // TCP port (587 for TLS, 465 for SSL)
             // ***************************************************

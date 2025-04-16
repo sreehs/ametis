@@ -56,6 +56,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
             <div class="container py-4">
                 <ul>
                     <li><a href="/" class="mobile-nav-link">Home</a></li>
+                    <li><a href="/services.php" class="nav-link">Services</a></li>
                     <li><a href="/about.php" class="mobile-nav-link">About</a></li>
                     <li><a href="/contact.php" class="mobile-nav-link">Contact</a></li>
                 </ul>
