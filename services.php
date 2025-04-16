@@ -1,3 +1,9 @@
+<?php
+// header("Cache-Control: no-cache, must-revalidate");
+// header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+include 'header.php'; 
+?> 
+
 
 <head>
   <title>QA Services - Automation, Performance, Advisory | Algometis</title>
@@ -7,11 +13,7 @@
   <link rel="stylesheet" href="css/components.css">
 </head>
 
-<?php
-// header("Cache-Control: no-cache, must-revalidate");
-// header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-include 'header.php'; 
-?> 
+
 
 <main>
   <!-- Hero Section -->

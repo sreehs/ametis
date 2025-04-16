@@ -1,15 +1,16 @@
-<head>
-  <!-- Existing meta tags -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/components.css">
-</head>
 <?php
 // Force scroll to top on page refresh
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 include 'header.php'; 
 ?>
+<head>
+  <!-- Existing meta tags -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
 
 <main>
 
